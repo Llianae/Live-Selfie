@@ -1,0 +1,19 @@
+<div class="center">
+  <h2>Test de capture vidéo</h2>
+  <p>Cette page permet de tester la fonctionnalité de capture vidéo</p>
+
+  <video [hidden]="!isRecording" width="100%" #preview autoplay muted playsinline></video>
+  <video [hidden]="isRecording" width="100%" #recording controls playsinline></video>
+
+  <div class="row">
+    <div class="column">
+      <button (click)="stopStartClick()" [disabled]="isSuccessed">
+        <span *ngIf="stopStart">Démarrer</span>
+        <span *ngIf="!stopStart">Arrêter</span>
+      </button>
+    </div>
+    <div class="column">
+      <button (click)="sendData()" [disabled]="isSuccessed">Envoyer</button>
+    </div>
+  </div>
+</div>
